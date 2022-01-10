@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "c9a255f9-9a91-4425-b334-b9e0c00022e5",
+		"name": "Direct-Dial CMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 096f0a84-4019-4495-abb3-b441e7dda196",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"pc_guid\": \"\",\r\n\"linkedin_url\": \"https://www.linkedin.com/in/ashwini-doshetty-993817190\",\r\n\"action\": \"FETCH\",\r\n\"key_name\": \"DG_QA_DA_23ff65c7-53a2-4d0b-abe7-fe41dac3dba1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.15.5:8080/dd/v1/dd/directdial/fetch",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"15",
+						"5"
+					],
+					"port": "8080",
+					"path": [
+						"dd",
+						"v1",
+						"dd",
+						"directdial",
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DD Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 096f0a84-4019-4495-abb3-b441e7dda196",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"pc_guid\": \"\",\r\n\"linkedin_url\": \"https://www.linkedin.com/in/kailash-kasa-27071955\",\r\n\"action\": \"FETCH\",\r\n\"key_name\": \"DG_QA_DA_23ff65c7-53a2-4d0b-abe7-fe41dac3dba1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.15.5:8080/dd/v1/dd/directdial/fetch",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"15",
+						"5"
+					],
+					"port": "8080",
+					"path": [
+						"dd",
+						"v1",
+						"dd",
+						"directdial",
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/subscriptions/096f0a84-4019-4495-abb3-b441e7dda196/prepaid/check-balance",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"096f0a84-4019-4495-abb3-b441e7dda196",
+						"prepaid",
+						"check-balance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

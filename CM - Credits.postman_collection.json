@@ -1,0 +1,2512 @@
+{
+	"info": {
+		"_postman_id": "5b06df6e-6051-43b2-aeb1-28402540b842",
+		"name": "CM - Credits",
+		"description": "CM Credits APIs v1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "subscriptions/{subscription Id}",
+					"item": [
+						{
+							"name": "prepaid",
+							"item": [
+								{
+									"name": "debit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"CM-Credit API - Verify the Invalid Subscription Id\", () => {",
+													"  const responseJson = pm.response.json();",
+													"  pm.expect(responseJson.httpStatus).to.eql(\"NOT_FOUND\");",
+													"  pm.expect(responseJson.errors).to.contain(\"Invalid subscriptionId\");",
+													"  pm.expect(responseJson.httpStatusCode).to.eql(404);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"credits\": 1\n  }"
+										},
+										"url": {
+											"raw": "http://192.168.15.5:8080/credits/v1/subscriptions/814a78a7-c27a-49aa-9ddb-14e22960c297/prepaid/deduct-credits",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"5"
+											],
+											"port": "8080",
+											"path": [
+												"credits",
+												"v1",
+												"subscriptions",
+												"814a78a7-c27a-49aa-9ddb-14e22960c297",
+												"prepaid",
+												"deduct-credits"
+											]
+										},
+										"description": "Deduct credits from prepaid subscription"
+									},
+									"response": [
+										{
+											"name": "In scope: Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unprocessable Entity",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Deduct credits successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Update failed",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Inactive subscription",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Limit exceeded",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+											"code": 509,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Invalid request data",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: SubscriptionId not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": -79666136,\n    \"event\": {\n        \"eventMessage\": \"irure c\",\n        \"sourceSystem\": \"Duis tempor exercitation\",\n        \"sourceSystemRefNo\": \"qui dolor amet cupidatat aliqua\",\n        \"targetSystem\": \"amet incididunt\",\n        \"targetSystemRefNo\": \"deserunt labore ullamco\",\n        \"targetSystemStatus\": \"consequat sint elit et\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/deduct-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"deduct-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "add Credits",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"credits\": 1,\n    \"message\": \"\"\n}"
+										},
+										"url": {
+											"raw": "http://192.168.15.5:8080/credits/v1/subscriptions/814a78a7-c27a-49aa-9ddb-14e22960c297/prepaid/add-credits",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"5"
+											],
+											"port": "8080",
+											"path": [
+												"credits",
+												"v1",
+												"subscriptions",
+												"814a78a7-c27a-49aa-9ddb-14e22960c297",
+												"prepaid",
+												"add-credits"
+											]
+										},
+										"description": "Add credits to prepaid subscription"
+									},
+									"response": [
+										{
+											"name": "In scope: Inactive subscription",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bandwidth Limit Exceeded",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+											"code": 509,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Invalid securityToken",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Unauthorized access",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: SubscriptionId not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Credits added successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"balance\": 22770199\n}"
+										},
+										{
+											"name": "In scope: Invalid request data",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Update failed",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 21471518,\n    \"securityToken\": \"dolore amet\",\n    \"message\": \"reprehen\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/add-credits?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"add-credits"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "balance",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://192.168.15.5:8080/credits/v1/subscriptions/93498e5f-671a-4678-b7a4-f4f107789004/prepaid/check-balance",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"5"
+											],
+											"port": "8080",
+											"path": [
+												"credits",
+												"v1",
+												"subscriptions",
+												"93498e5f-671a-4678-b7a4-f4f107789004",
+												"prepaid",
+												"check-balance"
+											]
+										},
+										"description": "Check prepaid subscription balance"
+									},
+									"response": [
+										{
+											"name": "In scope: Invalid subscriptionId supplied",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Found the balance",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"balance\": 22770199\n}"
+										},
+										{
+											"name": "Unprocessable Entity",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bandwidth Limit Exceeded",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+											"code": 509,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Inactive subscription",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: SubscriptionId not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/prepaid/check-balance?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"prepaid",
+														"check-balance"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "postpaid",
+							"item": [
+								{
+									"name": "consume",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"credits\": 10.9999\n}"
+										},
+										"url": {
+											"raw": "http://192.168.15.5:7000/v1/subscriptions/4a2890d6-c968-47f2-88a3-3e3dcc58b41e/postpaid/report-usage",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"5"
+											],
+											"port": "7000",
+											"path": [
+												"v1",
+												"subscriptions",
+												"4a2890d6-c968-47f2-88a3-3e3dcc58b41e",
+												"postpaid",
+												"report-usage"
+											]
+										},
+										"description": "Report usage to postpaid subscription"
+									},
+									"response": [
+										{
+											"name": "Unprocessable Entity",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: SubscriptionId not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Inactive subscription",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Limit exceeded",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+											"code": 509,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Update failed",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Invalid request data",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Deduct credits successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"credits\": 27884082,\n    \"event\": {\n        \"eventMessage\": \"officia in\",\n        \"sourceSystem\": \"deserunt eiusmod est\",\n        \"sourceSystemRefNo\": \"est do\",\n        \"targetSystem\": \"laborum eu et deserunt proident\",\n        \"targetSystemRefNo\": \"dolor cillum dolor nulla do\",\n        \"targetSystemStatus\": \"do in\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/report-usage?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"report-usage"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "usage",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://192.168.15.5:7000/v1/subscriptions/4a2890d6-c968-47f2-88a3-3e3dcc58b41e/postpaid/check-available-quota",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"5"
+											],
+											"port": "7000",
+											"path": [
+												"v1",
+												"subscriptions",
+												"4a2890d6-c968-47f2-88a3-3e3dcc58b41e",
+												"postpaid",
+												"check-available-quota"
+											]
+										},
+										"description": "Check postpaid subscription available credits quota"
+									},
+									"response": [
+										{
+											"name": "Bandwidth Limit Exceeded",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+											"code": 509,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: SubscriptionId not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Invalid subscriptionId supplied",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Inactive subscription",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "In scope: Found available quota",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"usage\": 58260691,\n \"threshold\": 89168470\n}"
+										},
+										{
+											"name": "Unprocessable Entity",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/subscriptions/:subscriptionId/postpaid/check-available-quota?subscriptionId=occaecat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"subscriptions",
+														":subscriptionId",
+														"postpaid",
+														"check-available-quota"
+													],
+													"query": [
+														{
+															"key": "subscriptionId",
+															"value": "occaecat"
+														}
+													],
+													"variable": [
+														{
+															"key": "subscriptionId"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/credits",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"credits"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"labore nostrud in sed qui\",\n \"subscriptionId\": \"esse aliquip fugiat\",\n \"securityToken\": \"eu\",\n \"billingCycleId\": -25844622,\n \"billingType\": \"esse dolor tempor\",\n \"consumed\": -49380063,\n \"quota\": -73663015,\n \"startDate\": \"1959-06-02\",\n \"endDate\": \"1958-06-19\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bandwidth Limit Exceeded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Bandwidth Limit Exceeded (Apache bw/limited extension)",
+							"code": 509,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unprocessable Entity",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subscriptionId\": \"\",\n    \"securityToken\": \"Lorem id veniam ea\",\n    \"billingCycleId\": -31602500,\n    \"billingType\": \"commodo laborum exercitation laboris ut\",\n    \"consumed\": 50449206,\n    \"quota\": 30382447,\n    \"startDate\": \"2017-10-10\",\n    \"endDate\": \"1994-05-30\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/credits",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"credits"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://192.168.15.5:7000",
+			"type": "string"
+		}
+	]
+}

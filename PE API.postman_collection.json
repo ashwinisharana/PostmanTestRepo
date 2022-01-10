@@ -1,0 +1,747 @@
+{
+	"info": {
+		"_postman_id": "60f4dd88-f5b6-410f-88d4-cdd7364ce932",
+		"name": "PE API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "demo",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6ca0323e-86f2-3c46-8021-3076fa46aa0f",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Client-id",
+						"value": "CLIENT5",
+						"type": "text"
+					},
+					{
+						"key": "Input-value",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "DSL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "ENR",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "ALL",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EFZ",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "PRD",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"recordId\": \"\",\r\n\r\n\"companyGuid\": \"\",\r\n\r\n\"companyWebAddress\": \"\",\r\n\r\n\"companyName\": \"\",\r\n\r\n\"contactFirstName\": \"Pankaj\",\r\n\r\n\"contactFullName\": \"\",\r\n\r\n\"contactMiddleName\": \"\",\r\n\r\n\"contactEmail\": \"pankaj.shinde@netcore.co.in\",\r\n\r\n\"contactJobTitle\": \"\",\r\n\r\n\"contactCountry\": \"India\",\r\n\r\n\"contactState\": \"\",\r\n\r\n\"contactZipcode\": \"\",\r\n\r\n\"contactGuid\": \"\",\r\n\r\n\"phone\": \"\",\r\n\r\n\"contactUrl\": \"\",\r\n\r\n\"accountId\": \"\",\r\n\r\n\"objectType\": \"\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "https://demopeapi.smarteinc.com/peapi/v1/enrich",
+					"protocol": "https",
+					"host": [
+						"demopeapi",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"peapi",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Qc",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Client-id",
+						"value": "SMT001",
+						"type": "text"
+					},
+					{
+						"key": "input-valve",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "ENL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "ENR",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "LTD",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EXT",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "FUL",
+						"type": "text"
+					},
+					{
+						"key": "personmb-value",
+						"value": "A123",
+						"type": "text"
+					},
+					{
+						"key": "apikey",
+						"value": "c453aa8f-5975-46ae-9dba-1e95ebed711b",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"recordId\": \"0033000001dtgK3AAI\",\r\n    \"companyGuid\": \"\",\r\n    \"companyName\": \"\",\r\n    \"companyWebAddress\":\"\",\r\n    \"contactId\": \"\",\r\n    \"contactFullName\": \"\",\r\n    \"contactFirstName\": \"\",\r\n    \"contactLastName\": \"\",\r\n    \"contactMiddleName\": \"\",\r\n    \"contactEmail\": \"moreno.dezio@sealedair.com\",\r\n    \"contactJobTitle\": \"\",\r\n    \"contactCountry\": \"\",\r\n    \"contactState\": \"\",\r\n    \"contactZipcode\": \"\",\r\n    \"contactGuid\": \"\",\r\n    \"phone\": \"\",\r\n    \"contactUrl\": \"\",\r\n    \"piid\": \"\",\r\n    \"accountId\": \"\",\r\n    \"objectType\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qcpeapi.smarteinc.com/api/v1/enrich",
+					"protocol": "http",
+					"host": [
+						"qcpeapi",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMPMB QC setup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Client-id",
+						"value": "SMT001",
+						"type": "text"
+					},
+					{
+						"key": "input-valve",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "ENL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "ENR",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "LTD",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EXT",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "FUL",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"contactFirstName\" : \"pankaj\",\r\n\"contactLastName\" : \"shinde\",\r\n\"contactEmail\" : \"pankaj.shinde@smarteinc.com\",\r\n\"contactJobTitle\" : \"test lead\",\r\n\"companyName\" : \"smarteinc\",\r\n\"contactCountry\" : \"bharat\",\r\n\"companyWebAddress\" : \"https://smarteinc.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.15.5:9100/api/v1/enrich",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"15",
+						"5"
+					],
+					"port": "9100",
+					"path": [
+						"api",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DA",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Client-id",
+						"type": "text",
+						"value": "SMT001"
+					},
+					{
+						"key": "input-valve",
+						"type": "text",
+						"value": "STD"
+					},
+					{
+						"key": "Ev-value",
+						"type": "text",
+						"value": "DSL"
+					},
+					{
+						"key": "Scope-value",
+						"type": "text",
+						"value": "ENR"
+					},
+					{
+						"key": "Output-value",
+						"type": "text",
+						"value": "LTD"
+					},
+					{
+						"key": "compmb-value",
+						"type": "text",
+						"value": "EXT"
+					},
+					{
+						"key": "Index-value",
+						"type": "text",
+						"value": "FUL"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"recordId\": \"SMT01\",\r\n    \"companyGuid\": \"\",\r\n    \"companyName\": \"\",\r\n    \"companyWebAddress\":\"\",\r\n    \"contactId\": \"\",\r\n    \"contactFullName\": \"\",\r\n    \"contactFirstName\": \"\",\r\n    \"contactLastName\": \"\",\r\n    \"contactMiddleName\": \"\",\r\n    \"contactEmail\": \"brady.lemoine@lemoinecompany.com\",\r\n    \"contactJobTitle\": \"\",\r\n    \"contactCountry\": \"\",\r\n    \"contactState\": \"\",\r\n    \"contactZipcode\": \"\",\r\n    \"contactGuid\": \"\",\r\n    \"phone\": \"\",\r\n    \"contactUrl\": \"\",\r\n    \"piid\": \"\",\r\n    \"accountId\": \"\",\r\n    \"objectType\": \"\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://dapeapi.smarteinc.com/api/v1/enrich",
+					"protocol": "http",
+					"host": [
+						"dapeapi",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DA PS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Client-id",
+						"type": "text",
+						"value": "ABC002"
+					},
+					{
+						"key": "input-valve",
+						"type": "text",
+						"value": "DG"
+					},
+					{
+						"key": "Ev-value",
+						"type": "text",
+						"value": "DSL"
+					},
+					{
+						"key": "Scope-value",
+						"type": "text",
+						"value": "ERF"
+					},
+					{
+						"key": "Output-value",
+						"type": "text",
+						"value": "ALL"
+					},
+					{
+						"key": "compmb-value",
+						"type": "text",
+						"value": "EXT"
+					},
+					{
+						"key": "Index-value",
+						"type": "text",
+						"value": "FUL"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"recordId\":\"\",\r\n\"objectType\": \"\",\r\n\"piid\": \"\",\r\n\"contactGuid\": \"\",\r\n\"contactFirstName\": \"Alan\",\r\n\"contactMiddleName\": \"\",\r\n\"contactLastName\": \"Benner\",\r\n\"contactFullName\": \"\",\r\n\"contactEmail\": \"bennera@us.ibm.com\",\r\n\"contactJobTitle\":\"Sr. Technical Staff Member\",\r\n\"contactUrl\": \"\",\r\n\"companyGuid\": \"\",\r\n\"companyName\": \"IBM\",\r\n\"contactState\": \"\",\r\n\"contactZipcode\": \"\",\r\n\"contactCountry\": \"United States\",\r\n\"phone\": \"1-845-433-7561\",\r\n\"companyWebAddress\":\"\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://dapeapi.smarteinc.com/api/v1/enrich",
+					"protocol": "http",
+					"host": [
+						"dapeapi",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Email TAF should be Junk\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.emailTAF).to.eql(\"junk\");",
+							"});",
+							"",
+							"pm.test(\"API return Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer a02eacae-9ee1-3585-ba9b-21fa8b581bd4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Client-id",
+						"value": "yrM1Rb2NH_5oHiOaqWiN_phGs1Ma",
+						"type": "text"
+					},
+					{
+						"key": "Input-value",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "DSL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "EAU",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "ALL",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EFZ",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "PRD",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"recordId\": \"\",\r\n    \"companyGuid\": \"\",\r\n    \"companyName\": \"The Lemoine Company, LLC\",\r\n    \"companyWebAddress\":\"\",\r\n    \"contactId\": \"\",\r\n    \"contactFullName\": \"Brady Lemoine\",\r\n    \"contactFirstName\": \"\",\r\n    \"contactLastName\": \"\",\r\n    \"contactMiddleName\": \"\",\r\n    \"contactEmail\": \"brady.lemoine@lemoinecompany.com\",\r\n    \"contactJobTitle\": \"\",\r\n    \"contactCountry\": \"\",\r\n    \"contactState\": \"\",\r\n    \"contactZipcode\": \"\",\r\n    \"contactGuid\": \"\",\r\n    \"phone\": \"\",\r\n    \"contactUrl\": \"\",\r\n    \"piid\": \"\",\r\n    \"accountId\": \"\",\r\n    \"objectType\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.smarteinc.com/peapi/v4/enrich",
+					"protocol": "https",
+					"host": [
+						"api",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"peapi",
+						"v4",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod with IP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 43f854dd-351a-367d-b533-38b0439b625d",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Client-id",
+						"value": "yrM1Rb2NH_5oHiOaqWiN_phGs1Ma",
+						"type": "text"
+					},
+					{
+						"key": "Input-value",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "DSL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "EAU",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "ALL",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EFZ",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "PRD",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"recordId\":\"\",\r\n\"contactGuid\": \"\",\r\n\"contactFirstName\": \"\",\r\n\"contactMiddleName\": \"\",\r\n\"contactLastName\": \"\",\r\n\"contactFullName\": \"Roland Peck\",\r\n\"contactEmail\": \"\",\r\n\"contactJobTitle\":\"\",\r\n\"contactUrl\": \"\",\r\n\"companyGuid\": \"\",\r\n\"companyName\": \"Luck Fine Art, LLC\",\r\n\"contactState\": \"\",\r\n\"contactZipcode\": \"\",\r\n\"contactCountry\": \"United States\",\r\n\"phone\": \"\",\r\n\"companyWebAddress\":\"http://www.lik.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.72.175.63:8055/api/v1/enrich",
+					"protocol": "http",
+					"host": [
+						"34",
+						"72",
+						"175",
+						"63"
+					],
+					"port": "8055",
+					"path": [
+						"api",
+						"v1",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod Copy",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 43f854dd-351a-367d-b533-38b0439b625d",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Client-id",
+						"value": "yrM1Rb2NH_5oHiOaqWiN_phGs1Ma",
+						"type": "text"
+					},
+					{
+						"key": "Input-value",
+						"value": "STD",
+						"type": "text"
+					},
+					{
+						"key": "Ev-value",
+						"value": "DSL",
+						"type": "text"
+					},
+					{
+						"key": "Scope-value",
+						"value": "ENR",
+						"type": "text"
+					},
+					{
+						"key": "Output-value",
+						"value": "ALL",
+						"type": "text"
+					},
+					{
+						"key": "compmb-value",
+						"value": "EFZ",
+						"type": "text"
+					},
+					{
+						"key": "Index-value",
+						"value": "PRD",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"recordId\": \"\",\r\n\r\n\"companyGuid\": \"\",\r\n\r\n\"companyWebAddress\": \"\",\r\n\r\n\"companyName\": \"\",\r\n\r\n\r\n\"contactFirstName\": \"\",\r\n\r\n\"contactFullName\": \"\",\r\n\r\n\"contactMiddleName\": \"\",\r\n\r\n\"contactEmail\": \"\",\r\n\r\n\"contactJobTitle\": \"\",\r\n\r\n\"contactCountry\": \"\",\r\n\r\n\"contactState\": \"\",\r\n\r\n\"contactZipcode\": \"\",\r\n\r\n\"contactGuid\": \"8EAD8EEF10B85F5CAE70777A6C368E33\",\r\n\r\n\"phone\": \"\",\r\n\r\n\"contactUrl\": \"\",\r\n\r\n\"accountId\": \"\",\r\n\r\n\"objectType\": \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.smarteinc.com/peapi/v2/enrich",
+					"protocol": "https",
+					"host": [
+						"api",
+						"smarteinc",
+						"com"
+					],
+					"path": [
+						"peapi",
+						"v2",
+						"enrich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prodCCI",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://35.225.185.89:9200/enrich_production_testing_lead/_search",
+					"protocol": "http",
+					"host": [
+						"35",
+						"225",
+						"185",
+						"89"
+					],
+					"port": "9200",
+					"path": [
+						"enrich_production_testing_lead",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.15.2:9200/testingqc_lead/_search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.15.2:9200/ashwinidoshetty_contact",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"15",
+						"2"
+					],
+					"port": "9200",
+					"path": [
+						"ashwinidoshetty_contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewProdCCI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.67.20.141:9200/enrich_production_testing_lead/_search",
+					"protocol": "http",
+					"host": [
+						"34",
+						"67",
+						"20",
+						"141"
+					],
+					"port": "9200",
+					"path": [
+						"enrich_production_testing_lead",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
